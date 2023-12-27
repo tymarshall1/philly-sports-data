@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/tymarshall1/philly-sports-data",
   "name": "philly-sports-data",
   "private": true,
   "version": "0.0.0",
@@ -13,7 +14,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
