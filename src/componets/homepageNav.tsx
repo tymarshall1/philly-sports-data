@@ -25,8 +25,8 @@ export default function HomepageNav() {
     <main className="grid grid-cols-2 grid-rows-2 gap-8 items-center mx-4 flex-1">
       <NavBox link="/eagles" alt="Eagles logo" logo={eaglesImage} />
       <NavBox link="/phillies" alt="Phillies logo" logo={phillies} />
-      <NavBox link="/eagles" alt="Flyers logo" logo={flyers} />
-      <NavBox link="/eagles" alt="Sixers logo" logo={sixers} />
+      <NavBox link="/flyers" alt="Flyers logo" logo={flyers} />
+      <NavBox link="/sixers" alt="Sixers logo" logo={sixers} />
     </main>
   );
 }
