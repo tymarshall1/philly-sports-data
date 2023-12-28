@@ -1,9 +1,16 @@
 import Layout from "../componets/layout";
+import TeamBanner from "./sportsPageComponets/teamBanner";
+import sixersLogo from "../assets/76ers.svg";
 
 export default function SixersPage() {
   return (
     <Layout>
-      <h1>Sixers Page!</h1>
+      <TeamBanner
+        teamName="Philadelphia 76ers"
+        teamLogo={sixersLogo}
+        backgroundClr="bg-blue-600"
+        borderClr="border-black"
+      />
     </Layout>
   );
 }

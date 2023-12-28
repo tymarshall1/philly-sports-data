@@ -1,9 +1,16 @@
 import Layout from "../componets/layout";
+import TeamBanner from "./sportsPageComponets/teamBanner";
+import eaglesLogo from "../assets/eagles.svg";
 
 export default function EaglesPage() {
   return (
     <Layout>
-      <h1>Eagles page!</h1>
+      <TeamBanner
+        teamName="Philadelphia Eagles"
+        backgroundClr="bg-green-800"
+        borderClr="border-black"
+        teamLogo={eaglesLogo}
+      />
     </Layout>
   );
 }

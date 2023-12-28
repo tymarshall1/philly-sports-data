@@ -1,8 +1,15 @@
 import Layout from "../componets/layout";
+import philliesLogo from "../assets/phillies.svg";
+import TeamBanner from "./sportsPageComponets/teamBanner";
 export default function PhilliesPage() {
   return (
     <Layout>
-      <h1>Phillies page!</h1>
+      <TeamBanner
+        teamName="Philadelphia Phillies"
+        teamLogo={philliesLogo}
+        backgroundClr="bg-red-600"
+        borderClr="border-black"
+      />
     </Layout>
   );
 }

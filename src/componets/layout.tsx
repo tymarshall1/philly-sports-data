@@ -17,9 +17,9 @@ const colorChoosen: string = teamColors[teamIndexNum];
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col gap-8">
+    <div className="flex flex-col gap-8 h-svh md:min-h-screen">
       <Navbar colorChoosen={colorChoosen} />
-      <div className="flex-1 mx-8 grid">{children}</div>
+      <main className="flex-1 mx-8">{children}</main>
       <Footer colorChoosen={colorChoosen} />
     </div>
   );

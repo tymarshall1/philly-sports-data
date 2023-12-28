@@ -3,6 +3,7 @@ import sixers from "../assets/76ers.svg";
 import flyers from "../assets/flyers.svg";
 import phillies from "../assets/phillies.svg";
 import { Link } from "react-router-dom";
+import Layout from "./layout";
 
 type NavBoxProps = {
   logo: string;
@@ -12,15 +13,15 @@ type NavBoxProps = {
 
 function NavBox(props: NavBoxProps) {
   return (
-    <div className="rounded-sm shadow-md p-2 flex items-center justify-center">
+    <div className="p-2 rounded-sm shadow-md">
       <Link
         to={props.link}
-        className="flex h-full w-full items-center justify-center"
+        className="flex items-center justify-center w-full h-full"
       >
         <img
           src={props.logo}
           alt={props.alt}
-          className="max-w-60 h-20 sm:h-44 md:h-60"
+          className="h-20 max-w-60 sm:h-40 md:h-56"
         />
       </Link>
     </div>
@@ -29,11 +30,13 @@ function NavBox(props: NavBoxProps) {
 
 export default function HomepageNav() {
   return (
-    <main className="grid grid-cols-2 grid-rows-2 gap-8">
-      <NavBox link="/eagles" alt="Eagles logo" logo={eaglesImage} />
-      <NavBox link="/phillies" alt="Phillies logo" logo={phillies} />
-      <NavBox link="/flyers" alt="Flyers logo" logo={flyers} />
-      <NavBox link="/sixers" alt="Sixers logo" logo={sixers} />
-    </main>
+    <Layout>
+      <div className="grid h-full gap-8 sm:grid-cols-2">
+        <NavBox link="/eagles" alt="Eagles logo" logo={eaglesImage} />
+        <NavBox link="/phillies" alt="Phillies logo" logo={phillies} />
+        <NavBox link="/flyers" alt="Flyers logo" logo={flyers} />
+        <NavBox link="/sixers" alt="Sixers logo" logo={sixers} />
+      </div>
+    </Layout>
   );
 }
