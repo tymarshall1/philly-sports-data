@@ -19,7 +19,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col gap-8">
       <Navbar colorChoosen={colorChoosen} />
-      {children}
+      <div className="flex-1 mx-8 grid">{children}</div>
       <Footer colorChoosen={colorChoosen} />
     </div>
   );

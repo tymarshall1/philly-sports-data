@@ -3,11 +3,11 @@ import Layout from "./componets/layout";
 
 function App() {
   return (
-    <div>
+    <>
       <Layout>
         <HomepageNav />
       </Layout>
-    </div>
+    </>
   );
 }
 
