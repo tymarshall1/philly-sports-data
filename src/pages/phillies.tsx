@@ -8,7 +8,7 @@ export default function PhilliesPage() {
         teamName="Philadelphia Phillies"
         teamLogo={philliesLogo}
         backgroundClr="bg-red-600"
-        borderClr="border-black"
+        borderClr="border-blue-800"
       />
     </Layout>
   );

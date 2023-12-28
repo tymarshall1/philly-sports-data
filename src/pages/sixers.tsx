@@ -9,7 +9,7 @@ export default function SixersPage() {
         teamName="Philadelphia 76ers"
         teamLogo={sixersLogo}
         backgroundClr="bg-blue-600"
-        borderClr="border-black"
+        borderClr="border-red-500"
       />
     </Layout>
   );
