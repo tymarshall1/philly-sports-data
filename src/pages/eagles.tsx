@@ -7,27 +7,27 @@ import { useEffect, useState } from "react";
 export default function EaglesPage() {
   const [eaglesData, setEaglesData] = useState<EaglesData | null>(null);
 
-  useEffect(() => {
-    const eaglesData = new EaglesData();
-    eaglesData
-      .initialize()
-      .then(() => {
-        setEaglesData(eaglesData);
-      })
-      .catch(() => {
-        console.log("error");
-      });
-  }, []);
+  // useEffect(() => {
+  //   const eaglesData = new EaglesData();
+  //   eaglesData
+  //     .initialize()
+  //     .then(() => {
+  //       setEaglesData(eaglesData);
+  //     })
+  //     .catch(() => {
+  //       console.log("error");
+  //     });
+  // }, []);
 
   return (
-    <Layout>
+    <Layout layoutColors="from-green-800 to-black">
       <TeamBanner
         teamName="Philadelphia Eagles"
         backgroundClr="bg-green-800"
         borderClr="border-black"
         teamLogo={eaglesLogo}
       />
-      <h1>{eaglesData?.record()}</h1>
+      {/* <h1>{eaglesData?.nextGameDate()}</h1> */}
     </Layout>
   );
 }

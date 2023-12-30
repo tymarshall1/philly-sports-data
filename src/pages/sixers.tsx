@@ -4,7 +4,7 @@ import sixersLogo from "../assets/76ers.svg";
 
 export default function SixersPage() {
   return (
-    <Layout>
+    <Layout layoutColors="from-blue-600 to-white">
       <TeamBanner
         teamName="Philadelphia 76ers"
         teamLogo={sixersLogo}

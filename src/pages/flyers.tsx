@@ -4,7 +4,7 @@ import flyersLogo from "../assets/flyers.svg";
 
 export default function FlyersPage() {
   return (
-    <Layout>
+    <Layout layoutColors="from-flyers to-black ">
       <TeamBanner
         teamName="Philadelphia Flyers"
         teamLogo={flyersLogo}

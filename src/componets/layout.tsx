@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 
 type LayoutProps = {
   children: ReactNode;
+  layoutColors?: string;
 };
 
 const teamColors: string[] = [
@@ -15,12 +16,15 @@ const teamColors: string[] = [
 const teamIndexNum: number = Math.floor(Math.random() * 4);
 const colorChoosen: string = teamColors[teamIndexNum];
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({
+  children,
+  layoutColors = colorChoosen,
+}: LayoutProps) {
   return (
     <div className="flex flex-col gap-8 h-svh md:min-h-screen">
-      <Navbar colorChoosen={colorChoosen} />
+      <Navbar colorChoosen={layoutColors} />
       <main className="flex-1 mx-8">{children}</main>
-      <Footer colorChoosen={colorChoosen} />
+      <Footer colorChoosen={layoutColors} />
     </div>
   );
 }
