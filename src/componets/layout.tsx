@@ -23,7 +23,7 @@ export default function Layout({
   return (
     <div className="flex flex-col gap-8 h-svh md:min-h-screen">
       <Navbar colorChoosen={layoutColors} />
-      <main className="flex-1 mx-8">{children}</main>
+      <main className="flex-1 mx-4">{children}</main>
       <Footer colorChoosen={layoutColors} />
     </div>
   );
