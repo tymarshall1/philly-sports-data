@@ -1,6 +1,7 @@
 import Layout from "../componets/layout";
 import TeamBanner from "./sportsPageComponets/teamBanner";
 import NextGame from "./sportsPageComponets/nextGame";
+import PreviousGame from "./sportsPageComponets/previousGame";
 import eaglesLogo from "../assets/eagles.svg";
 import EaglesData from "../services/eaglesData";
 import { useEffect, useState } from "react";
@@ -18,13 +19,18 @@ export default function EaglesPage() {
         setEaglesData(eaglesData);
         setLoading(false);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
         setError(true);
       })
       .finally(() => {
         setLoading(false);
       });
   }, []);
+
+  const eaglesNextGameObj = eaglesData?.nextGameDetails();
+  const eaglesPrevGameObj = eaglesData?.previousGameDetails();
 
   return (
     <Layout layoutColors="from-green-800 to-black">
@@ -42,11 +48,43 @@ export default function EaglesPage() {
             borderClr="border-black"
             teamLogo={eaglesLogo}
           />
-          <NextGame
-            nextGame={eaglesData?.nextGameTeam() || "Error loading data"}
-            date={eaglesData?.nextGameDate() || "Error loading data"}
-            time={eaglesData?.nextGameTime() || "Error loading data"}
-          />
+
+          {eaglesNextGameObj != null && "nextGameTeam" in eaglesNextGameObj ? (
+            <NextGame
+              nextGame={eaglesNextGameObj.nextGameTeam}
+              date={eaglesNextGameObj.nextGameDate}
+              time={eaglesNextGameObj.nextGameTime}
+            />
+          ) : (
+            <NextGame
+              nextGame={
+                eaglesNextGameObj?.error || "Error loading next game object"
+              }
+              date={
+                eaglesNextGameObj?.error || "Error loading next game object"
+              }
+              time={
+                eaglesNextGameObj?.error || "Error loading next game object"
+              }
+            />
+          )}
+
+          {eaglesPrevGameObj != null &&
+          "previousGameTeam" in eaglesPrevGameObj ? (
+            <PreviousGame
+              previousTeam={eaglesPrevGameObj.previousGameTeam}
+              record={eaglesPrevGameObj.previousGameRecord}
+            />
+          ) : (
+            <PreviousGame
+              previousTeam={
+                eaglesPrevGameObj?.error || "Error loading previous game object"
+              }
+              record={
+                eaglesPrevGameObj?.error || "Error loading previous game object"
+              }
+            />
+          )}
         </div>
       )}
     </Layout>
