@@ -14,17 +14,17 @@ const teamColors: string[] = [
   "from-blue-600 to-white",
 ];
 const teamIndexNum: number = Math.floor(Math.random() * 4);
-const colorChoosen: string = teamColors[teamIndexNum];
+const colorChosen: string = teamColors[teamIndexNum];
 
 export default function Layout({
   children,
-  layoutColors = colorChoosen,
+  layoutColors = colorChosen,
 }: LayoutProps) {
   return (
     <div className="flex flex-col gap-8 h-svh md:min-h-screen">
-      <Navbar colorChoosen={layoutColors} />
+      <Navbar colorChosen={layoutColors} />
       <main className="flex-1 mx-4">{children}</main>
-      <Footer colorChoosen={layoutColors} />
+      <Footer colorChosen={layoutColors} />
     </div>
   );
 }

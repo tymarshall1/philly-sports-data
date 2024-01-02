@@ -2,11 +2,15 @@ type NextGameProps = {
   nextGame: string;
   date: string;
   time: string;
+  backgroundClr: string;
+  borderClr: string;
 };
 
 function NextGame(props: NextGameProps) {
   return (
-    <div className="p-4 text-center text-white bg-green-800 border-4 border-black">
+    <div
+      className={`p-4 text-center text-white ${props.backgroundClr} border-4 ${props.borderClr}`}
+    >
       <h2 className="mb-2 text-3xl font-bold underline">Next Game</h2>
       <h3 className="mb-2 text-xl">{props.nextGame}</h3>
       <h2 className="mb-2 text-3xl font-bold underline">Date</h2>

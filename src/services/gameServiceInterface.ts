@@ -17,7 +17,6 @@ type NextGameResult = NextGameSuccess | Error;
 type PreviousGameResult = PreviousGameSuccess | Error;
 
 interface GameService {
-  initialize(): void;
   record(): string;
   nextGameDetails(): NextGameResult;
   previousGameDetails(): PreviousGameResult;

@@ -1,5 +1,5 @@
-import Layout from "../componets/layout";
-import TeamBanner from "./sportsPageComponets/teamBanner";
+import Layout from "../components/layout";
+import TeamBanner from "./sportsPageComponents/teamBanner";
 import flyersLogo from "../assets/flyers.svg";
 
 export default function FlyersPage() {

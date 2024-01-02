@@ -1,4 +1,4 @@
-import HomepageNav from "./componets/homepageNav";
+import HomepageNav from "./components/homepageNav";
 
 function App() {
   return (

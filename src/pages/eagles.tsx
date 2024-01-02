@@ -1,22 +1,21 @@
-import Layout from "../componets/layout";
-import TeamBanner from "./sportsPageComponets/teamBanner";
-import NextGame from "./sportsPageComponets/nextGame";
-import PreviousGame from "./sportsPageComponets/previousGame";
+import BaseSportsPage from "./baseSportsPage";
 import eaglesLogo from "../assets/eagles.svg";
-import EaglesData from "../services/eaglesData";
 import { useEffect, useState } from "react";
+import SportsData from "../services/extractSportsData";
+import ApiResponse from "../services/apiResponseInterface";
 
 export default function EaglesPage() {
-  const [eaglesData, setEaglesData] = useState<EaglesData | null>(null);
+  const [eaglesData, setEaglesData] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const eaglesData = new EaglesData();
-    eaglesData
-      .initialize()
-      .then(() => {
-        setEaglesData(eaglesData);
+    fetch(
+      "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/teams/phi/schedule?region=us&lang=en&seasontype=2"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setEaglesData(data);
         setLoading(false);
       })
       .catch((error) => {
@@ -29,64 +28,23 @@ export default function EaglesPage() {
       });
   }, []);
 
-  const eaglesNextGameObj = eaglesData?.nextGameDetails();
-  const eaglesPrevGameObj = eaglesData?.previousGameDetails();
+  const sportsData = new SportsData(eaglesData);
+  const eaglesNextGameObj = sportsData.nextGameDetails();
+  const eaglesPrevGameObj = sportsData.previousGameDetails();
 
   return (
-    <Layout layoutColors="from-green-800 to-black">
-      {loading ? (
-        <div className="text-4xl font-bold text-center">loading...</div>
-      ) : error ? (
-        <div className="text-4xl font-bold text-center">
-          Error occured while loading data
-        </div>
-      ) : (
-        <div className="grid gap-8">
-          <TeamBanner
-            teamName="Philadelphia Eagles"
-            backgroundClr="bg-green-800"
-            borderClr="border-black"
-            teamLogo={eaglesLogo}
-          />
-
-          {eaglesNextGameObj != null && "nextGameTeam" in eaglesNextGameObj ? (
-            <NextGame
-              nextGame={eaglesNextGameObj.nextGameTeam}
-              date={eaglesNextGameObj.nextGameDate}
-              time={eaglesNextGameObj.nextGameTime}
-            />
-          ) : (
-            <NextGame
-              nextGame={
-                eaglesNextGameObj?.error || "Error loading next game object"
-              }
-              date={
-                eaglesNextGameObj?.error || "Error loading next game object"
-              }
-              time={
-                eaglesNextGameObj?.error || "Error loading next game object"
-              }
-            />
-          )}
-
-          {eaglesPrevGameObj != null &&
-          "previousGameTeam" in eaglesPrevGameObj ? (
-            <PreviousGame
-              previousTeam={eaglesPrevGameObj.previousGameTeam}
-              record={eaglesPrevGameObj.previousGameRecord}
-            />
-          ) : (
-            <PreviousGame
-              previousTeam={
-                eaglesPrevGameObj?.error || "Error loading previous game object"
-              }
-              record={
-                eaglesPrevGameObj?.error || "Error loading previous game object"
-              }
-            />
-          )}
-        </div>
-      )}
-    </Layout>
+    <BaseSportsPage
+      loading={loading}
+      error={error}
+      teamLogo={eaglesLogo}
+      nextGameObj={eaglesNextGameObj}
+      PrevGameObj={eaglesPrevGameObj}
+      layoutBannerClr={"from-green-800 to-black"}
+      teamName={"Philadelphia Eagles"}
+      backgroundClr={"bg-green-800"}
+      borderClr={"border-black"}
+    >
+      <></>
+    </BaseSportsPage>
   );
 }

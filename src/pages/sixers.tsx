@@ -1,5 +1,5 @@
-import Layout from "../componets/layout";
-import TeamBanner from "./sportsPageComponets/teamBanner";
+import Layout from "../components/layout";
+import TeamBanner from "./sportsPageComponents/teamBanner";
 import sixersLogo from "../assets/76ers.svg";
 
 export default function SixersPage() {
