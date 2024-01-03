@@ -21,7 +21,7 @@ function NavBox(props: NavBoxProps) {
         <img
           src={props.logo}
           alt={props.alt}
-          className="h-20 max-w-60 sm:h-40 md:h-56"
+          className="h-16 max-w-60 sm:h-40 md:h-56"
         />
       </Link>
     </div>
