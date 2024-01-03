@@ -7,7 +7,7 @@ type NavBarProps = {
 export default function Navbar(props: NavBarProps) {
   return (
     <nav
-      className={`text-3xl p-4 text-white bg-gradient-to-r ${props.colorChosen}`}
+      className={`font-black text-4xl p-4 text-white bg-gradient-to-r ${props.colorChosen}`}
     >
       <Link to="/">Home</Link>
     </nav>

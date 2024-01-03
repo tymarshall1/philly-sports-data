@@ -11,12 +11,12 @@ function NextGame(props: NextGameProps) {
     <div
       className={`p-4 text-center text-white ${props.backgroundClr} border-4 ${props.borderClr}`}
     >
-      <h2 className="mb-2 text-3xl font-bold underline">Next Game</h2>
-      <h3 className="mb-2 text-xl">{props.nextGame}</h3>
-      <h2 className="mb-2 text-3xl font-bold underline">Date</h2>
-      <h3 className="mb-2 text-xl">{props.date}</h3>
-      <h2 className="mb-2 text-3xl font-bold underline">Time</h2>
-      <h3 className="mb-2 text-xl">{props.time}</h3>
+      <h2 className="mb-2 text-3xl font-black underline">Next Game</h2>
+      <h3 className="mb-2 text-xl font-medium">{props.nextGame}</h3>
+      <h2 className="mb-2 text-3xl font-black underline">Date</h2>
+      <h3 className="mb-2 text-xl font-medium">{props.date}</h3>
+      <h2 className="mb-2 text-3xl font-black underline">Time</h2>
+      <h3 className="mb-2 text-xl font-medium">{props.time}</h3>
     </div>
   );
 }

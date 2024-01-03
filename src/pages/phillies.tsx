@@ -9,6 +9,7 @@ export default function PhilliesPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  //going to have to change the half value halfway through the season
   useEffect(() => {
     fetch(
       "https://site.web.api.espn.com/apis/site/v2/sports/baseball/mlb/teams/phi/schedule?region=us&lang=en&seasontype=2&half=1"
