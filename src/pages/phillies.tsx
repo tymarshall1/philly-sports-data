@@ -2,7 +2,7 @@ import philliesLogo from "../assets/phillies.svg";
 import { useEffect, useState } from "react";
 import SportsData from "../services/extractSportsData";
 import ApiResponse from "../services/apiResponseInterface";
-import BaseSportsPage from "./baseSportsPage";
+import BaseSportsPage from "./sportsPageComponents/baseSportsPage";
 
 export default function PhilliesPage() {
   const [philliesData, setPhilliesData] = useState<ApiResponse | null>(null);

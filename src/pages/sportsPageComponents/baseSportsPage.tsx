@@ -1,11 +1,11 @@
-import NextGame from "./sportsPageComponents/nextGame";
-import PreviousGame from "./sportsPageComponents/previousGame";
-import Layout from "../components/layout";
-import TeamBanner from "./sportsPageComponents/teamBanner";
+import NextGame from "./nextGame";
+import PreviousGame from "./previousGame";
+import Layout from "../../components/layout";
+import TeamBanner from "./teamBanner";
 import {
   PreviousGameResult,
   NextGameResult,
-} from "../services/gameServiceInterface";
+} from "../../services/gameServiceInterface";
 import { ReactNode } from "react";
 
 type BaseSportsPageProps = {

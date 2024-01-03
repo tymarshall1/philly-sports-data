@@ -10,11 +10,13 @@ type ApiResponse = {
             displayValue: string;
           };
           team: {
+            shortDisplayName: string;
             nickname: string;
           };
         },
         {
           team: {
+            shortDisplayName: string;
             nickname: string;
           };
           score: {

@@ -1,4 +1,4 @@
-import BaseSportsPage from "./baseSportsPage";
+import BaseSportsPage from "./sportsPageComponents/baseSportsPage";
 import eaglesLogo from "../assets/eagles.svg";
 import { useEffect, useState } from "react";
 import SportsData from "../services/extractSportsData";
