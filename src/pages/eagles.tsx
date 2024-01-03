@@ -3,7 +3,7 @@ import eaglesLogo from "../assets/eagles.svg";
 import { useEffect, useState } from "react";
 import SportsData from "../services/extractSportsData";
 import ApiResponse from "../services/apiResponseInterface";
-
+import BaseSportsPageTesting from "./sportsPageComponents/baseSportsPageForTesting";
 export default function EaglesPage() {
   const [eaglesData, setEaglesData] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -46,5 +46,17 @@ export default function EaglesPage() {
     >
       <></>
     </BaseSportsPage>
+
+    // <BaseSportsPageTesting
+    //   loading={false}
+    //   error={false}
+    //   teamLogo={eaglesLogo}
+    //   layoutBannerClr={"from-green-800 to-black"}
+    //   teamName={"Philadelphia Eagles"}
+    //   backgroundClr={"bg-green-800"}
+    //   borderClr={"border-black"}
+    // >
+    //   <></>
+    // </BaseSportsPageTesting>
   );
 }

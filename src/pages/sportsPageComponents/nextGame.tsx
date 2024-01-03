@@ -9,7 +9,7 @@ type NextGameProps = {
 function NextGame(props: NextGameProps) {
   return (
     <div
-      className={`p-4 text-center text-white ${props.backgroundClr} border-4 ${props.borderClr}`}
+      className={`p-4 text-center text-white ${props.backgroundClr} border-4 rounded ${props.borderClr}`}
     >
       <h2 className="mb-2 text-3xl font-black underline">Next Game</h2>
       <h3 className="mb-2 text-xl font-medium">{props.nextGame}</h3>

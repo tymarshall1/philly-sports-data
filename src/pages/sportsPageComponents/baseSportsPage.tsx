@@ -7,6 +7,7 @@ import {
   NextGameResult,
 } from "../../services/gameServiceInterface";
 import { ReactNode } from "react";
+import loading from "../../assets/loading.svg";
 
 type BaseSportsPageProps = {
   loading: boolean;
@@ -25,7 +26,10 @@ function BaseSportsPage(props: BaseSportsPageProps) {
   return (
     <Layout layoutColors={props.layoutBannerClr}>
       {props.loading ? (
-        <div className="text-4xl font-bold text-center">loading...</div>
+        <div className="text-4xl font-bold text-center">
+          loading
+          <img className="inline-block w-8 h-8 ml-2" src={loading} alt="" />
+        </div>
       ) : props.error ? (
         <div className="text-4xl font-bold text-center">
           Error occurred while loading data
