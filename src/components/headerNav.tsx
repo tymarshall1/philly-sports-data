@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import hamburger from "../assets/hamburger.svg";
 import closeBtn from "../assets/close.svg";
 import { useState } from "react";
+import eaglesLogo from "../assets/eagles.svg";
+import philliesLogo from "../assets/phillies.svg";
+import sixersLogo from "../assets/76ers.svg";
+import flyersLogo from "../assets/flyers.svg";
 
 type NavBarProps = {
   colorChosen: string;
@@ -29,10 +33,23 @@ function HamburgerNav() {
           alt="close nav button"
           className="self-start w-10 h-10"
         />
-        <Link to="/eagles">Eagles</Link>
-        <Link to="/phillies">Phillies</Link>
-        <Link to="/flyers">Flyers</Link>
-        <Link to="/sixers">Sixers</Link>
+        <div className="flex items-center justify-between w-[75%]">
+          <Link to="/eagles">Eagles</Link>
+          <img src={eaglesLogo} alt="" className="inline-block w-8 h-8" />
+        </div>
+        <div className="flex items-center justify-between w-[75%]">
+          <Link to="/phillies">Phillies</Link>
+          <img src={philliesLogo} alt="" className="inline-block w-8 h-8" />
+        </div>
+        <div className="flex items-center justify-between w-[75%]">
+          {" "}
+          <Link to="/flyers">Flyers</Link>
+          <img src={flyersLogo} alt="" className="inline-block w-8 h-8" />
+        </div>
+        <div className="flex items-center justify-between w-[75%]">
+          <Link to="/sixers">Sixers</Link>
+          <img src={sixersLogo} alt="" className="inline-block w-8 h-8" />
+        </div>
       </nav>
     </aside>
   );

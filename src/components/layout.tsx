@@ -11,7 +11,7 @@ const teamColors: string[] = [
   "from-flyers to-black ",
   "from-green-800 to-black ",
   "from-blue-800 to-red-600 ",
-  "from-blue-600 to-white",
+  "from-blue-600 to-red-500",
 ];
 const teamIndexNum: number = Math.floor(Math.random() * 4);
 const colorChosen: string = teamColors[teamIndexNum];
