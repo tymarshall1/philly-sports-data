@@ -29,7 +29,6 @@ export default function FlyersPage() {
   }, []);
 
   const sportsData = new SportsData(flyersData);
-
   const flyersNextGameObj = sportsData.nextGameDetails();
   const flyersPrevGameObj = sportsData.previousGameDetails();
   return (
@@ -39,6 +38,8 @@ export default function FlyersPage() {
       teamLogo={flyersLogo}
       nextGameObj={flyersNextGameObj}
       PrevGameObj={flyersPrevGameObj}
+      teamRecord={sportsData.record()}
+      teamStanding={sportsData.standing()}
       layoutBannerClr={"from-flyers to-black"}
       teamName={"Philadelphia Flyers"}
       backgroundClr={"bg-flyers"}

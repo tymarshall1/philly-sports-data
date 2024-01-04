@@ -9,6 +9,8 @@ type BaseSportsPageProps = {
   loading: boolean;
   error: boolean;
   teamLogo: string;
+  teamRecord: string;
+  teamStanding: string;
   layoutBannerClr: string;
   teamName: string;
   backgroundClr: string;
@@ -31,6 +33,8 @@ function BaseSportsPageTesting(props: BaseSportsPageProps) {
       ) : (
         <div className="grid gap-8 md:grid-cols-2">
           <TeamBanner
+            teamRecord={props.teamRecord}
+            teamStanding={props.teamStanding}
             teamName={props.teamName}
             teamLogo={props.teamLogo}
             backgroundClr={props.backgroundClr}

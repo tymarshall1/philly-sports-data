@@ -1,6 +1,10 @@
 type ApiResponse = {
   date: string;
   name: string;
+  team: {
+    recordSummary: string;
+    standingSummary: string;
+  };
   events: [];
   competitions: [
     {

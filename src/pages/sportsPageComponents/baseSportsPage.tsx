@@ -15,6 +15,8 @@ type BaseSportsPageProps = {
   teamLogo: string;
   nextGameObj: NextGameResult;
   PrevGameObj: PreviousGameResult;
+  teamRecord: string;
+  teamStanding: string;
   layoutBannerClr: string;
   teamName: string;
   backgroundClr: string;
@@ -37,6 +39,8 @@ function BaseSportsPage(props: BaseSportsPageProps) {
       ) : (
         <div className="grid gap-8 md:grid-cols-2">
           <TeamBanner
+            teamRecord={props.teamRecord}
+            teamStanding={props.teamStanding}
             teamName={props.teamName}
             teamLogo={props.teamLogo}
             backgroundClr={props.backgroundClr}

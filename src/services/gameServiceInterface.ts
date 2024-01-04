@@ -18,8 +18,9 @@ type PreviousGameResult = PreviousGameSuccess | Error;
 
 interface GameService {
   record(): string;
+  standing(): string;
   nextGameDetails(): NextGameResult;
   previousGameDetails(): PreviousGameResult;
 }
 
-export type { GameService, NextGameResult, PreviousGameResult };
+export type { GameService, NextGameResult, PreviousGameResult, Error };

@@ -15,8 +15,16 @@ export default class SportsData implements GameService {
 
   public record(): string {
     if (this.loadedData) {
-      return "";
-    } else throw new Error("Eagles Data Not Loaded");
+      return this.loadedData.team.recordSummary;
+    }
+    return "Error occurred while loading record";
+  }
+
+  public standing(): string {
+    if (this.loadedData) {
+      return this.loadedData.team.standingSummary;
+    }
+    return "Error occurred while loading standing";
   }
 
   public nextGameDetails(): NextGameResult {

@@ -41,6 +41,8 @@ export default function PhilliesPage() {
       teamLogo={philliesLogo}
       nextGameObj={philliesNextGameObj}
       PrevGameObj={philliesPrevGameObj}
+      teamRecord={sportsData.record()}
+      teamStanding={sportsData.standing()}
       layoutBannerClr={"from-blue-800 to-red-600"}
       teamName={"Philadelphia Phillies"}
       backgroundClr={"bg-red-600"}

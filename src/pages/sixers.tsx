@@ -40,6 +40,8 @@ export default function SixersPage() {
       teamLogo={sixersLogo}
       nextGameObj={sixersNextGameObj}
       PrevGameObj={sixersPrevGameObj}
+      teamRecord={sportsData.record()}
+      teamStanding={sportsData.standing()}
       layoutBannerClr={"from-blue-600 to-red-500"}
       teamName={"Philadelphia 76ers"}
       backgroundClr={"bg-blue-600"}
