@@ -27,6 +27,51 @@ export default class SportsData implements GameService {
     return "Error occurred while loading standing";
   }
 
+  public schedule() {
+    const gameSchedule = [];
+    if (this.loadedData) {
+      const schedule = this.loadedData.events;
+      let game: ApiResponse;
+      for (game of schedule) {
+        const dateObj = new Date(game.date);
+        const singleGame = {
+          gameName: game.shortName,
+          date: dateObj.toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+          time: dateObj.toLocaleString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          }),
+          homeTeamLogo: game.competitions[0].competitors[0].team.logos[0].href,
+          homeTeamName:
+            game.competitions[0].competitors[0].team.shortDisplayName,
+          awayTeamLogo: game.competitions[0].competitors[1].team.logos[0].href,
+          awayTeamName:
+            game.competitions[0].competitors[1].team.shortDisplayName,
+        };
+
+        gameSchedule.push(singleGame);
+      }
+      return gameSchedule;
+    }
+    return [
+      {
+        gameName: "error loading schedule",
+        date: "error loading schedule",
+        time: "error loading schedule",
+        homeTeamLogo: "error loading schedule",
+        homeTeamName: "error loading schedule",
+        awayTeamLogo: "error loading schedule",
+        awayTeamName: "error loading schedule",
+      },
+    ];
+  }
+
   public nextGameDetails(): NextGameResult {
     if (this.loadedData) {
       const schedule = this.loadedData.events;

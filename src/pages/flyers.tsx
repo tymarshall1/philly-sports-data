@@ -40,10 +40,12 @@ export default function FlyersPage() {
       PrevGameObj={flyersPrevGameObj}
       teamRecord={sportsData.record()}
       teamStanding={sportsData.standing()}
+      schedule={sportsData.schedule()}
       layoutBannerClr={"from-flyers to-black"}
       teamName={"Philadelphia Flyers"}
       backgroundClr={"bg-flyers"}
       borderClr={"border-black"}
+      scheduleHeaderClr="text-flyers"
     >
       <></>
     </BaseSportsPage>

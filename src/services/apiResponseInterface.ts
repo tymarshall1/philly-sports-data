@@ -1,6 +1,7 @@
 type ApiResponse = {
   date: string;
   name: string;
+  shortName: string;
   team: {
     recordSummary: string;
     standingSummary: string;
@@ -16,12 +17,22 @@ type ApiResponse = {
           team: {
             shortDisplayName: string;
             nickname: string;
+            logos: [
+              {
+                href: string;
+              }
+            ];
           };
         },
         {
           team: {
             shortDisplayName: string;
             nickname: string;
+            logos: [
+              {
+                href: string;
+              }
+            ];
           };
           score: {
             displayValue: string;

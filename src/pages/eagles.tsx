@@ -3,6 +3,7 @@ import eaglesLogo from "../assets/eagles.svg";
 import { useEffect, useState } from "react";
 import SportsData from "../services/extractSportsData";
 import ApiResponse from "../services/apiResponseInterface";
+
 // import BaseSportsPageTesting from "./sportsPageComponents/baseSportsPageForTesting";
 export default function EaglesPage() {
   const [eaglesData, setEaglesData] = useState<ApiResponse | null>(null);
@@ -41,10 +42,12 @@ export default function EaglesPage() {
       PrevGameObj={eaglesPrevGameObj}
       teamRecord={sportsData.record()}
       teamStanding={sportsData.standing()}
+      schedule={sportsData.schedule()}
       layoutBannerClr={"from-green-800 to-black"}
       teamName={"Philadelphia Eagles"}
       backgroundClr={"bg-green-800"}
       borderClr={"border-black"}
+      scheduleHeaderClr="text-green-800"
     >
       <></>
     </BaseSportsPage>

@@ -1,3 +1,5 @@
+import GameSchedule from "./GameScheduleInterface";
+
 interface NextGameSuccess {
   nextGameTime: string;
   nextGameDate: string;
@@ -19,6 +21,7 @@ type PreviousGameResult = PreviousGameSuccess | Error;
 interface GameService {
   record(): string;
   standing(): string;
+  schedule(): GameSchedule;
   nextGameDetails(): NextGameResult;
   previousGameDetails(): PreviousGameResult;
 }

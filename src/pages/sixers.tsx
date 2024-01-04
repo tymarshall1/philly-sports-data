@@ -42,10 +42,12 @@ export default function SixersPage() {
       PrevGameObj={sixersPrevGameObj}
       teamRecord={sportsData.record()}
       teamStanding={sportsData.standing()}
+      schedule={sportsData.schedule()}
       layoutBannerClr={"from-blue-600 to-red-500"}
       teamName={"Philadelphia 76ers"}
       backgroundClr={"bg-blue-600"}
       borderClr={"border-red-500"}
+      scheduleHeaderClr="text-blue-600"
     >
       <></>
     </BaseSportsPage>

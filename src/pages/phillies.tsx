@@ -43,10 +43,12 @@ export default function PhilliesPage() {
       PrevGameObj={philliesPrevGameObj}
       teamRecord={sportsData.record()}
       teamStanding={sportsData.standing()}
+      schedule={sportsData.schedule()}
       layoutBannerClr={"from-blue-800 to-red-600"}
       teamName={"Philadelphia Phillies"}
       backgroundClr={"bg-red-600"}
       borderClr={"border-blue-800"}
+      scheduleHeaderClr="text-red-600"
     >
       <></>
     </BaseSportsPage>

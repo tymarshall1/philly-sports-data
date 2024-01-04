@@ -8,6 +8,8 @@ import {
 } from "../../services/gameServiceInterface";
 import { ReactNode } from "react";
 import loading from "../../assets/loading.svg";
+import Schedule from "./schedule";
+import GameSchedule from "../../services/GameScheduleInterface";
 
 type BaseSportsPageProps = {
   loading: boolean;
@@ -17,10 +19,12 @@ type BaseSportsPageProps = {
   PrevGameObj: PreviousGameResult;
   teamRecord: string;
   teamStanding: string;
+  schedule: GameSchedule;
   layoutBannerClr: string;
   teamName: string;
   backgroundClr: string;
   borderClr: string;
+  scheduleHeaderClr: string;
   children: ReactNode;
 };
 
@@ -91,6 +95,12 @@ function BaseSportsPage(props: BaseSportsPageProps) {
               }
             />
           )}
+          <Schedule
+            schedule={props.schedule}
+            backgroundClr={props.backgroundClr}
+            borderClr={props.borderClr}
+            scheduleHeaderClr={props.scheduleHeaderClr}
+          />
           {props.children}
         </div>
       )}
