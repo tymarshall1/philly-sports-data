@@ -41,7 +41,7 @@ function BaseSportsPage(props: BaseSportsPageProps) {
           Error occurred while loading data
         </div>
       ) : (
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid h-full gap-8 md:grid-cols-2 xl:grid-cols-3 ">
           <TeamBanner
             teamRecord={props.teamRecord}
             teamStanding={props.teamStanding}

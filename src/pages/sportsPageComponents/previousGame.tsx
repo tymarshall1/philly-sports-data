@@ -8,7 +8,7 @@ type PreviousGameProps = {
 function PreviousGame(props: PreviousGameProps) {
   return (
     <div
-      className={`p-4 text-center text-white ${props.backgroundClr} border-4 rounded ${props.borderClr}`}
+      className={`p-4 text-center text-white ${props.backgroundClr} border-4 rounded ${props.borderClr} xl:col-start-1 xl:col-end-3`}
     >
       <h2 className="mb-2 text-3xl font-black underline">Previous Game</h2>
       <h3 className="mb-2 text-xl font-medium">{props.previousTeam}</h3>

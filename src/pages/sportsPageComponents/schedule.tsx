@@ -35,7 +35,8 @@ type ScheduleProps = {
 function Schedule(props: ScheduleProps) {
   return (
     <div
-      className={`${props.backgroundClr} ${props.borderClr} border-4 max-h-96 overflow-y-scroll relative rounded`}
+      className={`${props.backgroundClr} ${props.borderClr} border-4 max-h-96 overflow-y-scroll relative rounded 
+      md:col-start-1 md:col-end-3 xl:col-start-3 xl:col-end-4 xl:row-start-1 xl:row-end-4 xl:max-h-screen`}
     >
       <h1
         className={`sticky top-0 p-2 text-3xl font-black text-center ${props.scheduleHeaderClr} bg-white`}
