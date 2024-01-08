@@ -104,6 +104,32 @@ export default class SportsData implements GameService {
     }
   }
 
+  private previousGameDetailsHelper(game: ApiResponse) {
+    const teamOneName: string = game.competitions[0].competitors[0].team
+      .nickname
+      ? game.competitions[0].competitors[0].team.nickname
+      : game.competitions[0].competitors[0].team.shortDisplayName;
+
+    const teamOneScore: string =
+      game.competitions[0].competitors[0].score.displayValue;
+
+    const teamTwoName: string = game.competitions[0].competitors[1].team
+      .nickname
+      ? game.competitions[0].competitors[1].team.nickname
+      : game.competitions[0].competitors[1].team.shortDisplayName;
+
+    const teamTwoScore: string =
+      game.competitions[0].competitors[1].score.displayValue;
+
+    const teamOne = teamOneName + ": " + teamOneScore;
+    const teamTwo = teamTwoName + ": " + teamTwoScore;
+
+    return {
+      previousGameRecord: teamOne + " - " + teamTwo,
+      previousGameTeam: game.name,
+    };
+  }
+
   public previousGameDetails(): PreviousGameResult {
     if (this.loadedData) {
       const schedule = this.loadedData.events;
@@ -122,28 +148,20 @@ export default class SportsData implements GameService {
           }
 
           game = schedule[i - 1];
-
-          const teamOneName: string = game.competitions[0].competitors[0].team
-            .nickname
-            ? game.competitions[0].competitors[0].team.nickname
-            : game.competitions[0].competitors[0].team.shortDisplayName;
-
-          const teamOneScore: string =
-            game.competitions[0].competitors[0].score.displayValue;
-
-          const teamTwoName: string = game.competitions[0].competitors[1].team
-            .nickname
-            ? game.competitions[0].competitors[1].team.nickname
-            : game.competitions[0].competitors[1].team.shortDisplayName;
-
-          const teamTwoScore: string =
-            game.competitions[0].competitors[1].score.displayValue;
-
-          const teamOne = teamOneName + ": " + teamOneScore;
-          const teamTwo = teamTwoName + ": " + teamTwoScore;
+          const { previousGameRecord, previousGameTeam } =
+            this.previousGameDetailsHelper(game);
           return {
-            previousGameRecord: teamOne + " - " + teamTwo,
-            previousGameTeam: game.name,
+            previousGameRecord: previousGameRecord,
+            previousGameTeam: previousGameTeam,
+          };
+        }
+        //last game of season
+        if (i + 1 === schedule.length) {
+          const { previousGameRecord, previousGameTeam } =
+            this.previousGameDetailsHelper(game);
+          return {
+            previousGameRecord: previousGameRecord,
+            previousGameTeam: previousGameTeam,
           };
         }
       }
